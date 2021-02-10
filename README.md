@@ -1,6 +1,6 @@
 # Extended System Library
 
-Biblioteca que implementa classes que auxiliam em atividades assincronas, requisições HTTP, gereciamento de arquivos e diretórios para projetos baseados em [![.NET](https://img.shields.io/badge/-.NET-5C2D91?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com) framework 3.5.
+Biblioteca criada para facilitar a implementação de atividades assincronas, requisições HTTP, gereciamento de arquivos e diretórios para projetos baseados em .NET framework 3.5. [![.NET](https://img.shields.io/badge/-.NET-5C2D91?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com)
 
 ## Index
 * [Asynchronous](#Asynchronous)
