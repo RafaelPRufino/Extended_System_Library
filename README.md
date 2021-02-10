@@ -86,7 +86,8 @@ namespace TestePromise
 ```
 #### Work
 A classe Work auxilia na execução ordenada de atividades, permitindo limitar de 0 até N os trabalhos feitos de forma simultânea.
-Após a execução das tarefas é possível capturar os retornos de cada uma dessas tarefas.
+
+Após a execução das tarefas é possível capturar os retornos de cada uma.
 ```vb
 Module Testwork
 
