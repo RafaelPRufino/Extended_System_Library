@@ -60,12 +60,12 @@ namespace TestePromise
             Console.ReadLine();
         }
 
-        private static bool callback(ref string p)
+        static bool callback(ref string p)
         {
             return !string.IsNullOrEmpty(p);
         }
 
-        static void   updated(Object data)
+        static void updated(Object data)
         {
             Console.WriteLine(data);
         }
