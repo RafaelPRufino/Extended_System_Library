@@ -5,7 +5,7 @@ Biblioteca que implementa classes de gerencimento de atividades assincronas para
 ## Index
 * [Asynchronous](#Asynchronous)
 ### Asynchronous
-Biblioteca que implementa classes de gerencimento de atividades assincronas para projetos baseados em [![.NET](https://img.shields.io/badge/-.NET-5C2D91?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com) framework 3.5.
+Conjunto de classes que implementam o gerenciamente de atividades assincronas!!!!!!
 #### Promise
 ```vb
 Module TestPromise
