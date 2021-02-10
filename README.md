@@ -4,6 +4,7 @@ Biblioteca criada para facilitar a implementação de atividades assincronas, re
 
 ## Index
 * [Asynchronous](#Asynchronous)
+* [Lang](#Lang)
 ### Asynchronous
 Conjunto de classes que implementam o gerenciamente de atividades assincronas!!!!!!
 #### Promise
@@ -128,5 +129,26 @@ Module Testwork
 
         Return param.ToString
     End Function
+End Module
+```
+### Lang
+* [Directory](#Directory)
+#### Directory
+
+```vb
+Module TestDirectory
+    Sub Main()
+        Dim current = Lang.Directory.Directory.CurrentPath
+        Dim files = Lang.Directory.Directory.Files(current)
+
+        Console.WriteLine("Resultado======================")
+        ''.lista de arquivos
+        For Each file In files
+            Console.WriteLine("File = " & file.ToString)
+            Console.WriteLine("Length = " & file.LengthKB)
+        Next
+
+        Console.ReadLine()
+    End Sub
 End Module
 ```
