@@ -53,7 +53,7 @@
         '**/
         Private controlInvoker As System.Windows.Forms.Control
 
-        Public Sub New(ByVal invoker As System.Windows.Forms.Control)
+        Public Sub New(Optional ByVal invoker As System.Windows.Forms.Control = Nothing)
             controlInvoker = invoker
         End Sub
 
@@ -61,7 +61,7 @@
         ''' Executa uma função assíncrona
         ''' </summary>
         ''' <param name="callable"> Função assíncrona </param>
-        Public Sub Invoke(ByVal callable As Asynchronous.Action)
+        Public Sub Invoke(ByVal callable As Asynchronous.Action(Of T))
             Try
                 actionAction = Job.Instance(callable)
                 AddHandler CType(actionAction, Job).finalized, AddressOf callback
@@ -76,7 +76,7 @@
         ''' </summary>
         ''' <param name="callable"> Função assíncrona </param>
         ''' <param name="parameter"> Parâmentro</param>
-        Public Sub Invoke(ByVal callable As Asynchronous.ActionParameter, ByRef parameter As Object)
+        Public Sub Invoke(Of P)(ByVal callable As Asynchronous.ActionParameter(Of P, T), ByRef parameter As P)
             Try
                 actionAction = Job.Instance(callable)
                 CType(actionAction, Job).Parameter = parameter
@@ -121,7 +121,7 @@
         ''' Evento assíncrono
         ''' </summary>
         ''' <param name="data"> Resultado do trabalho realizado </param>
-        Public Sub update(Of M)(ByVal data As M)
+        Public Sub update(ByVal data As Object)
             Try
                 callbackUpdate(data)
             Catch ex As Exception
@@ -143,7 +143,7 @@
                         callback = Nothing
                     End If
                 Else
-                    fireEvent(data)
+                    fireEventUpdate(data)
                 End If
             Catch ex As Exception
                 Throw New PromiseException(ex.Message, ex)

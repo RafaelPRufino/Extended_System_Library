@@ -67,6 +67,9 @@
     <Compile Include="Asynchronous\Job.vb" />
     <Compile Include="Asynchronous\Promise.vb" />
     <Compile Include="Asynchronous\Work.vb" />
+    <Compile Include="Lang\Collection.vb" />
+    <Compile Include="Lang\Directory\Directory.vb" />
+    <Compile Include="Lang\Directory\File.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

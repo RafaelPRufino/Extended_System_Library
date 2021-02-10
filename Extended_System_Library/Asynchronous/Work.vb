@@ -80,7 +80,7 @@ Namespace Asynchronous
         ''' Executa uma função assíncrona
         ''' </summary>
         ''' <param name="Action"> Função assíncrona </param>
-        Public Sub Invoke(ByVal action As Action)
+        Public Sub Invoke(ByVal action As Action(Of Object))
             Try
                 Invoke(Job.Instance(action))
             Catch ex As Exception
@@ -93,7 +93,22 @@ Namespace Asynchronous
         ''' </summary>
         ''' <param name="Action"> Função assíncrona </param>
         ''' <param name="parameter"> Parâmetro </param>
-        Public Sub Invoke(Of T)(ByVal action As ActionParameter, ByVal parameter As T)
+        Public Sub Invoke(Of T, R)(ByVal action As ActionParameter(Of T, R), ByVal parameter As T)
+            Try
+                Dim _job As Job = Job.Instance(action)
+                _job.Parameter = parameter
+                Invoke(_job)
+            Catch ex As Exception
+                Throw New WorkException(ex.Message, ex)
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Executa uma função assíncrona
+        ''' </summary>
+        ''' <param name="Action"> Função assíncrona </param>
+        ''' <param name="parameter"> Parâmetro </param>
+        Public Sub Invoke(Of T)(ByVal action As ActionParameter(Of T, Object), ByVal parameter As T)
             Try
                 Dim _job As Job = Job.Instance(action)
                 _job.Parameter = parameter
@@ -108,7 +123,7 @@ Namespace Asynchronous
         ''' </summary>
         ''' <param name="Action"> Função assíncrona </param>
         ''' <param name="parameters"> Lista de Parâmetros </param>
-        Public Sub Invoke(Of T)(ByVal action As ActionParameter, ByVal parameters As List(Of T))
+        Public Sub Invoke(Of T)(ByVal action As ActionParameter(Of T, Object), ByVal parameters As List(Of T))
             Try
                 For Each parameter As T In parameters
                     Dim _job As Job = Job.Instance(action)
@@ -125,7 +140,7 @@ Namespace Asynchronous
         ''' </summary>
         ''' <param name="Action"> Função assíncrona </param>
         ''' <param name="parameters"> Array de Parâmetros </param>
-        Public Sub Invoke(Of T)(ByVal action As ActionParameter, ByVal parameters As T())
+        Public Sub Invoke(Of T)(ByVal action As ActionParameter(Of T, Object), ByVal parameters As T())
             Try
                 For Each parameter As T In parameters
                     Dim _job As Job = Job.Instance(action)
@@ -149,6 +164,7 @@ Namespace Asynchronous
                 _thread.Name = String.Format("{0}.{1}-{2}", "Work-Semaphore", "Job", _id)
                 _thread.Start(_id)
                 _taks.Add(_thread)
+
             Catch ex As Exception
                 Throw New WorkException(ex.Message, ex)
             End Try

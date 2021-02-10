@@ -150,16 +150,16 @@ Namespace Asynchronous
         Private Sub Invoke()
             Try
                 jobstateState = JobState.WaitSleep
-                Select Case Action.GetType.FullName
-                    Case GetType(Asynchronous.Action).FullName
-                        jobstateState = JobState.Running
-                        objectResult = CType(Action, Asynchronous.Action).Invoke()
-                    Case GetType(Asynchronous.ActionParameter).FullName
-                        jobstateState = JobState.Running
-                        objectResult = CType(Action, Asynchronous.ActionParameter).Invoke(Parameter)
-                    Case Else
-                        Throw New Exception("delegated function not allowed")
-                End Select
+
+                If Action.GetType.FullName.Contains("ActionParameter") Then
+                    jobstateState = JobState.Running
+                    objectResult = Action.Invoke(Parameter)
+                ElseIf Action.GetType.FullName.Contains("Action") Then
+                    jobstateState = JobState.Running
+                    objectResult = Action.Invoke()
+                Else
+                    Throw New Exception("delegated function not allowed")
+                End If
                 jobstateState = JobState.Completed
             Catch ex As Exception
                 jobstateState = JobState.Stopped
