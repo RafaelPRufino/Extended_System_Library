@@ -2,8 +2,8 @@
 
 Namespace Lang
     Namespace Directory
-        Public Class Directory
-            Public Shared ReadOnly Property FolderDefault() As IO.DirectoryInfo
+        Public MustInherit Class Directory
+            Public Shared ReadOnly Property CurrentPath() As IO.DirectoryInfo
                 Get
                     Return New IO.DirectoryInfo(System.Windows.Forms.Application.StartupPath)
                 End Get
@@ -15,9 +15,9 @@ Namespace Lang
                 End Get
             End Property
 
-            Public Shared ReadOnly Property FolderDependencies() As IO.DirectoryInfo
+            Public Shared ReadOnly Property DependenciesPath() As IO.DirectoryInfo
                 Get
-                    Return New IO.DirectoryInfo(Directory.FolderDefault.FullName & ToUpper("\Dependencies"))
+                    Return New IO.DirectoryInfo(Directory.CurrentPath.FullName & ToUpper("\Dependencies"))
                 End Get
             End Property
 
