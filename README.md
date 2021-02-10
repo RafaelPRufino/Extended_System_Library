@@ -103,13 +103,14 @@ Module Testwork
 
         work.Invoke(Of Int32)(AddressOf callback, 547)
 
-        work.Invoke(Of String)(AddressOf callback, "Passando string")
-        
+        work.Invoke(Of String)(AddressOf callback, "Parâmetro string")
+
         work.Invoke(Of Date)(AddressOf callback, Now)
-        
+
         ''Aguarda até a finalização de todas as atividades empilhadas
         work.Wait()
-        
+
+        Console.WriteLine("Resultado======================")
         ''.Jobs é a lista de respostas de cada tarefa
         For Each Job In work.Jobs
             Console.WriteLine(Job.Result)
@@ -118,14 +119,14 @@ Module Testwork
         Console.ReadLine()
     End Sub
 
-    Function callback(ByRef param As Object) As Boolean
+    Function callback(ByRef param As Object) As Object
         Console.WriteLine(param.ToString)
 
         If Int32.TryParse(param, 0) Then
             Return param * Now.Millisecond
         End If
 
-        Return True
+        Return param.ToString
     End Function
 End Module
 ```
