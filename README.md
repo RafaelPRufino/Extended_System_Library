@@ -32,3 +32,50 @@ Module TestPromise
     End Sub
 End Module
 ```
+
+```c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Extended_System_Library.Asynchronous;
+
+namespace TestePromise
+{
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            Promise<Boolean> promise = new Promise<Boolean> ();
+            string pParams = "";
+
+            promise.updated += updated;
+            promise.finalized += finalized;
+            promise.Invoke<string>(callback,ref pParams);
+            Console.ReadLine();
+        }
+
+        private static bool callback(ref string p)
+        {
+            return !string.IsNullOrEmpty(p);
+        }
+
+        static void   updated(Object data)
+        {
+            Console.WriteLine(data);
+        }
+
+        static void finalized(Boolean data)
+        {
+            if( data)
+            {
+                Console.WriteLine("Sucesso!!!!!!!!!!!!!!");
+            }else
+            {
+                Console.WriteLine("Falha!!!!!!!!!!!!!!");
+            }
+        }
+    }
+}
+```
