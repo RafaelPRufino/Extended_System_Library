@@ -70,6 +70,11 @@
     <Compile Include="Asynchronous\Job.vb" />
     <Compile Include="Asynchronous\Promise.vb" />
     <Compile Include="Asynchronous\Work.vb" />
+    <Compile Include="Db\Commands.vb" />
+    <Compile Include="Db\Connections\DataConnection.vb" />
+    <Compile Include="Db\Connectors\LinkConnection.vb" />
+    <Compile Include="Db\Parameters.vb" />
+    <Compile Include="Dispose.vb" />
     <Compile Include="Lang\Collection.vb" />
     <Compile Include="Lang\Date\DateFormats.vb" />
     <Compile Include="Lang\Directory\Directory.vb" />

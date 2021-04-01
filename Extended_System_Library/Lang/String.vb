@@ -450,9 +450,9 @@ Namespace Lang
                 If str Is Nothing Then
                     Return Nothing
                 End If
-                If Lang.Date.IsDate(str) Then
-                    Return Lang.Date.GetDate(str, "dd/mm/yyyy")
-                ElseIf Lang.Date.IsDate(str, "ddmmyyyy") Then
+                If Lang.Date.Date.isDate(str) Then
+                    Return Lang.Date.Date.getDate(str, "dd/mm/yyyy")
+                ElseIf Lang.Date.Date.IsDate(str, "ddmmyyyy") Then
                     Return Convert.ToDateTime(str.Substring(0, 2) & "/" & str.Substring(2, 2) & "/" & str.Substring(4, 4))
                 End If
             Catch ex As Exception
