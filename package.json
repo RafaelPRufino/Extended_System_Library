@@ -1,0 +1,25 @@
+{
+  "name": "Extended_System_Library",
+  "version": "1.1.2",
+  "private": true,
+  "dependencies": {
+    "semantic-release": "^17.4.2"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "standard-version": "^9.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "release": "git add . && git cz && standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

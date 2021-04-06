@@ -10,7 +10,7 @@
     <AssemblyName>Extended_System_Library</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -80,6 +80,7 @@
     <Compile Include="Lang\Directory\Directory.vb" />
     <Compile Include="Lang\Directory\File.vb" />
     <Compile Include="Lang\Date\Date.vb" />
+    <Compile Include="Lang\Directory\Logger.vb" />
     <Compile Include="Lang\Property.vb" />
     <Compile Include="Lang\String.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

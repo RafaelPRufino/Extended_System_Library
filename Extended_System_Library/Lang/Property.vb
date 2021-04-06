@@ -53,7 +53,7 @@ Namespace Lang
             End Try
         End Function
 
-        Public Shared Function toAnonymousType(Of T)(ByVal source As IDictionary(Of String, Object), ByVal AnonymousType As T) As T
+        Public Shared Function ToAnonymousType(Of T)(ByVal source As IDictionary(Of String, Object), ByVal AnonymousType As T) As T
             Try
                 Dim someObject = AnonymousType
                 Dim someObjectType = AnonymousType.GetType
@@ -61,7 +61,7 @@ Namespace Lang
                 For Each item In source
                     Dim info = someObjectType.GetProperty(item.Key)
                     If info Is Nothing = False Then
-                        info.SetValue(someObject, GetValueAt(source, item.Key, info.PropertyType), Nothing)
+                        info.SetValue(someObject, getValueAt(source, item.Key, info.PropertyType), Nothing)
                     End If
                 Next
 
@@ -71,7 +71,7 @@ Namespace Lang
             End Try
         End Function
 
-        Public Shared Function asType(Of T As {Class, New})(ByVal source As IDictionary(Of String, Object)) As T
+        Public Shared Function AsType(Of T As {Class, New})(ByVal source As IDictionary(Of String, Object)) As T
             Try
                 Dim someObject = New T()
                 Dim someObjectType = someObject.[GetType]()
@@ -81,13 +81,21 @@ Namespace Lang
                     Dim custom As CustomAttributeData = Nothing
                     Dim Named As String
 
-                    Named = info.Name
+                    If info.CustomAttributes Is Nothing = False AndAlso info.CustomAttributes.Count > 0 Then
+                        custom = info.CustomAttributes.First
+                    End If
 
+                    If custom Is Nothing = False Then
+                        Named = custom.ConstructorArguments.First.Value
+                    Else
+                        Named = info.Name
+                    End If
                     Try
-                        info.SetValue(someObject, GetValueAt(source, Named, info.PropertyType), Nothing)
+                        info.SetValue(someObject, getValueAt(source, Named, info.PropertyType), Nothing)
                     Catch ex As Exception
 
                     End Try
+
                 Next
 
                 Return someObject
