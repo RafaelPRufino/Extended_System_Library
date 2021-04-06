@@ -1,0 +1,476 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Extended_System_Library
+</name>
+</assembly>
+<members>
+<member name="T:Extended_System_Library.My.Resources.Resources">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:Extended_System_Library.My.Resources.Resources.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:Extended_System_Library.My.Resources.Resources.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="T:Extended_System_Library.Asynchronous.Action`1">
+ <summary>
+ Função assíncrona
+ </summary>
+ <returns> Action </returns> 
+</member>
+<member name="T:Extended_System_Library.Asynchronous.ActionParameter`2">
+ <summary>
+ Função assíncrona
+ </summary>
+ <param name="p"> Parâmentro </param>
+ <returns> Action Of Parameter </returns>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Job.State">
+ <summary>
+ Get variable jobstateState
+ @return type JobState
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Job.Thread">
+ <summary>
+ Get and Set variable threadThread
+ @return and @param type Thread
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Job.Action">
+ <summary>
+ Get and Set variable actionAction
+ @return and @param type Action
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Job.Parameter">
+ <summary>
+ Get and Set variable tParameter
+ @return and @param type T
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Job.Result">
+ <summary>
+ Get variable objectResult
+ @return type Object
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Job.Instance(System.Object)">
+ <summary>
+ Instância Função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+ <returns> Instance </returns>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Job.Start">
+ <summary>
+ Inicia a execução do processo
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Job.Wait">
+ <summary>
+ Aguarda a execução do processo
+ </summary>
+ <returns> Boolean </returns>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Job.Abort">
+ <summary>
+ Aborta a execução do processo
+ </summary>
+ <returns> Boolean </returns>
+</member>
+<member name="E:Extended_System_Library.Asynchronous.Job.finalized">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="job"> Micro trabalho finalizado </param>
+</member>
+<member name="E:Extended_System_Library.Asynchronous.Promise`1.finalized">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="data"> Resultado do trabalho realizado </param>
+</member>
+<member name="E:Extended_System_Library.Asynchronous.Promise`1.updated">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="data"> Resultado do trabalho realizado </param>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Promise`1.Action">
+ <summary>
+ Get and Set variable actionAction
+ @return and @param type Action
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Promise`1.Invoke(Extended_System_Library.Asynchronous.Action{`0})">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="callable"> Função assíncrona </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Promise`1.Invoke``1(Extended_System_Library.Asynchronous.ActionParameter{``0,`0},``0@)">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="callable"> Função assíncrona </param>
+ <param name="parameter"> Parâmentro</param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Promise`1.update(System.Object)">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="data"> Resultado do trabalho realizado </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Promise`1.Prevent">
+ <summary>
+ Parar Evento assíncrono
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Work.Jobs">
+ <summary>
+ Get variable listResult
+ @return type List(Of Job)
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.#ctor(System.Int32)">
+ <summary>
+  Inicializado do Objecto
+ </summary>
+ <param name="runningAtMaximum"> Número maxímo de execuções simultâneas </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Invoke(Extended_System_Library.Asynchronous.Action{System.Object})">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Invoke``2(Extended_System_Library.Asynchronous.ActionParameter{``0,``1},``0)">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+ <param name="parameter"> Parâmetro </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Invoke``1(Extended_System_Library.Asynchronous.ActionParameter{``0,System.Object},``0)">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+ <param name="parameter"> Parâmetro </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Invoke``1(Extended_System_Library.Asynchronous.ActionParameter{``0,System.Object},System.Collections.Generic.List{``0})">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+ <param name="parameters"> Lista de Parâmetros </param>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Invoke``1(Extended_System_Library.Asynchronous.ActionParameter{``0,System.Object},``0[])">
+ <summary>
+ Executa uma função assíncrona
+ </summary>
+ <param name="Action"> Função assíncrona </param>
+ <param name="parameters"> Array de Parâmetros </param>
+</member>
+<member name="P:Extended_System_Library.Asynchronous.Work._taks">
+ <summary>
+ Get and Set variable list_taks
+ @return and @param type List(Of Thread)
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Asynchronous.Work.Wait">
+ <summary>
+ Aguarda todos os processos executarem
+ </summary>
+ <returns> Boolean </returns>
+</member>
+<member name="E:Extended_System_Library.Asynchronous.Work.finalized">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="job"> Resultado do trabalho realizado </param>
+</member>
+<member name="E:Extended_System_Library.Asynchronous.Work.finalizedAll">
+ <summary>
+ Evento assíncrono
+ </summary>
+ <param name="work"> Resultado do trabalho realizado </param>
+</member>
+<member name="P:Extended_System_Library.Db.Connections.DataConnection.StringConnection">
+ <summary>
+ Get and Set variable stringStringConnection
+ @return and @param type String
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Db.Connections.DataConnection.buildStringConnection(System.String,System.String,System.String,System.String)">
+ <summary>
+ Instance new Object Class DataConnection
+ </summary>
+ <param name="UserBd"> Usuário de Conexão </param>
+ <param name="SenhaBd"> Senha de Conexão </param>
+ <param name="servidorBd"> Servidor de Conexão </param>
+ <param name="bancoBaseBd"> Banco de Dados </param>
+ <returns> Type DataConnection </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connections.DataConnection.Instance(System.String,System.String,System.String,System.String)">
+ <summary>
+ Instance new Object Class DataConnection
+ </summary>
+ <param name="UserBd"> Usuário de Conexão </param>
+ <param name="SenhaBd"> Senha de Conexão </param>
+ <param name="servidorBd"> Servidor de Conexão </param>
+ <param name="bancoBaseBd"> Banco de Dados </param>
+ <returns> Type DataConnection </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connections.DataConnection.Instance(System.String)">
+ <summary>
+ Instance new Object Class DataConnection
+ </summary>
+ <param name="localStringStringConnection"> String de Conexão </param>
+ <returns> Type DataConnection </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connections.DataConnection.ChangeConnection(System.String)">
+ <summary>
+ Alterar conexão com banco de dados
+ </summary>
+ <param name="stringConnection"> String de Conexão </param>
+</member>
+<member name="P:Extended_System_Library.Db.Connectors.LinkConnection.Connection">
+ <summary>
+ Get variable dataconnectionConnection
+ @return type DataConnection
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Connectors.LinkConnection.Parameters">
+ <summary>
+ Get and Set variable parametercollectionParameters
+ @return and @param type ParameterCollection
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ExecuteDataTableReader(System.String)">
+ <summary>
+ Executa query em banco e retorna uma DataTableReader
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <returns> ExecuteDataTableReader </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ExecuteDataTableReader(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma DataTableReader
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> ExecuteDataTableReader </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ExecuteDataTable(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma ExecuteDataTable
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> ExecuteDataTable </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.Tolist(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma List(Of Object)
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> Tolist </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.Tolist``1(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma List(Of T)
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> Tolist </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.AsTypeList``1(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma List(Of T)
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> Tolist </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.AsType``1(System.String,System.Data.CommandType)">
+ <summary>
+ Executa query em banco e retorna uma List(Of T)
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> Tolist </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.Tolist``1(System.String,System.Data.CommandType,``0)">
+ <summary>
+ Executa query em banco e retorna uma List(Of T)
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <param name="AnonymousType"> T </param>
+ <returns> Tolist </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ExecuteCommand(System.String,System.Data.CommandType)">
+ <summary>
+ Executa um comando no Banco
+ </summary>
+ <param name="commandText"> Query String SQL </param>
+ <param name="CommandType"> Tipo de Query: Procedure, Text </param>
+ <returns> ExecuteCommand </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ChangeConnection(System.String)">
+ <summary>
+ Alterar conexão com banco de dados
+ <param name="stringConnection"> String de Conexão </param>
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ChangeConnection(System.Data.SqlClient.SqlConnection)">
+ <summary>
+ Alterar conexão com banco de dados
+ <param name="targetConnection"> SqlConnection </param>
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Db.Connectors.LinkConnection.ChangeConnection(System.String,System.String,System.String,System.String)">
+ <summary>
+ Alterar conexão com banco de dados
+ <param name="Username"> Usuário de Conexão </param>
+ <param name="Password"> Senha de Conexão </param>
+ <param name="Server"> Servidor de Conexão </param>
+ <param name="DataBase"> Banco de Dados </param>
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.Parameter">
+ <summary>
+ Get and Set variable sqlparameterParameter
+ @return and @param type SqlParameter
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.Value">
+ <summary>
+ Get and Set variable Parameter.Value
+ @return and @param type Object
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.Name">
+ <summary>
+ Get and Set variable Parameter.Name
+ @return and @param type String
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.Direction">
+ <summary>
+ Get and Set variable Parameter.Direction
+ @return and @param type ParameterDirection
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.PType">
+ <summary>
+ Get and Set variable Parameter.DbType
+ @return and @param type DbType
+ </summary>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.Parameter.Size">
+ <summary>
+ Get and Set variable Parameter.Size
+ @return and @param type Long
+ </summary>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.Parameter.Instance(System.Object,System.String,System.Data.ParameterDirection,System.Data.DbType,System.Int64)">
+ <summary>
+ Instance new Object Class Parameter
+ </summary>
+ <param name="localObjectValue"> Valor do Parâmetro :: DBNull.Value </param>
+ <param name="localStringName"> Nome do Parâmetro </param>
+ <param name="localParameterdirectionDirection"> Direção do Parâmetro :: InputOutput </param>
+ <param name="localDbtypePType"> Tipo de Parâmetro </param>
+ <param name="localLongSize"> Tamanho de Parâmetro </param>
+ <returns> Type Parameter </returns>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.ParametersCollection.Item(System.String)">
+ <summary>
+ @return Parameter by name
+ </summary>
+ <param name="name"> Nome do Parâmetro </param>
+ <returns> Parameter </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Add(Extended_System_Library.Db.Parameters.Parameter)">
+ <summary>
+ Adicionar um novo Parâmetro
+ </summary>
+ <param name="item"> Parâmetro </param>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Add(System.String,System.Object,System.Data.ParameterDirection,System.Data.DbType,System.Int64)">
+ <summary>
+ Adicionar um novo Parâmetro
+ </summary>
+ <param name="localObjectValue"> Valor do Parâmetro :: DBNull.Value </param>
+ <param name="localStringName"> Nome do Parâmetro </param>
+ <param name="localParameterdirectionDirection"> Direção do Parâmetro :: InputOutput </param>
+ <param name="localDbtypePType"> Tipo de Parâmetro </param>
+ <param name="localLongSize"> Tamanho de Parâmetro </param>
+ <returns> Add::ParameterCollection </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Add(System.String,System.Object)">
+ <summary>
+ Adicionar um novo Parâmetro
+ </summary>
+ <param name="localObjectValue"> Valor do Parâmetro :: DBNull.Value </param>
+ <param name="localStringName"> Nome do Parâmetro </param>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Contains(Extended_System_Library.Db.Parameters.Parameter)">
+ <summary>
+ Verificar se parâmentro já existe
+ </summary>
+ <param name="item"> Parâmetro </param>
+ <returns> Contains::Boolean </returns>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.ParametersCollection.ToList">
+ <summary>
+ Converte em lista
+ </summary>
+ <returns> ToList::List(Of Parameter) </returns>
+</member>
+<member name="P:Extended_System_Library.Db.Parameters.ParametersCollection.Count">
+ <summary>
+ Retorna total de parâmentros incluídos
+ </summary>
+ <returns> Count::Integer </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Remove(Extended_System_Library.Db.Parameters.Parameter)">
+ <summary>
+ Remove um parâmetro da lista
+ </summary>
+ <param name="item"> Parâmetro </param>
+ <returns> Remove::Boolean </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Instance">
+ <summary>
+ Instance new Object Class ParameterCollection
+ </summary>
+ <returns> Type ParameterCollection </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Realese">
+ <summary>
+ Remove todos os parâmentros
+ </summary>
+ <returns> Realese::Boolean </returns>
+</member>
+<member name="M:Extended_System_Library.Db.Parameters.ParametersCollection.Clear">
+ <summary>
+ Remove todos os parâmentros
+ </summary>
+</member>
+</members>
+</doc>
