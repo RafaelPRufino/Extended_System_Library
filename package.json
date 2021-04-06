@@ -20,7 +20,8 @@
     }
   },
   "scripts": {
-    "release": "git add . && git cz && standard-version"
+    "release": "git add . && git cz && standard-version",
+    "prerelease": "git add . && git cz && standard-version -- --prerelease sc"
   },
   "husky": {
     "hooks": {
