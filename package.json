@@ -1,6 +1,6 @@
 {
   "name": "Extended_System_Library",
-  "version": "1.3.0",
+  "version": "1.3.1-sc.0",
   "private": true,
   "dependencies": {},
   "devDependencies": {
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "release": "git add . && git cz && standard-version",
-    "prerelease": "git add . && git cz && standard-version -- --prerelease sc"
+    "prerelease": "standard-version --prerelease sc"
   },
   "husky": {
     "hooks": {
